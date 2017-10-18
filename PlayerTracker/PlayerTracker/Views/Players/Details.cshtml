@@ -1,0 +1,16 @@
+﻿@model PlayerTracker.Models.Player
+@{
+    ViewBag.Title = Model.LastName;
+}
+<br/>
+<div>
+    <h2>@Model.FirstName @Model.LastName</h2>
+    @Html.ActionLink("Edit Player Info", "Edit", "Players", new { id = Model.Id }, null)
+</div>
+<ul>
+    <li>First Name: @Model.FirstName</li>
+    <li>Last Name: @Model.LastName</li>
+    <li>Team Name: @Model.Team.Name</li>
+</ul>
+
+
