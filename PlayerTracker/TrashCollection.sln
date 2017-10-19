@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrashCollection", "PlayerTr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF", "EF\EF.csproj", "{906D5A39-841B-41FD-A9B8-F190E56BEAFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{F2D679E1-0572-47ED-A6F6-D68165C57172}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{906D5A39-841B-41FD-A9B8-F190E56BEAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{906D5A39-841B-41FD-A9B8-F190E56BEAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{906D5A39-841B-41FD-A9B8-F190E56BEAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D679E1-0572-47ED-A6F6-D68165C57172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D679E1-0572-47ED-A6F6-D68165C57172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D679E1-0572-47ED-A6F6-D68165C57172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D679E1-0572-47ED-A6F6-D68165C57172}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

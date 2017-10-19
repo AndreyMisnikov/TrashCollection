@@ -70,13 +70,16 @@
     <Compile Include="Migrations\201710190049221_Add trash collector.Designer.cs">
       <DependentUpon>201710190049221_Add trash collector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710190501039_Changes for columns of trash collector.cs" />
+    <Compile Include="Migrations\201710190501039_Changes for columns of trash collector.Designer.cs">
+      <DependentUpon>201710190501039_Changes for columns of trash collector.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\IEntity.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Models\TrashCollectorEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\IGenericRepository.cs" />
+    <Compile Include="Services\TrashCollectorService.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710190038481_Test.resx">
@@ -85,6 +88,9 @@
     <EmbeddedResource Include="Migrations\201710190049221_Add trash collector.resx">
       <DependentUpon>201710190049221_Add trash collector.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710190501039_Changes for columns of trash collector.resx">
+      <DependentUpon>201710190501039_Changes for columns of trash collector.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -92,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{f2d679e1-0572-47ed-a6f6-d68165c57172}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

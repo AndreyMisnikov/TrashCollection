@@ -15,6 +15,10 @@ E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Tra
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\TrashCollection.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\TrashCollection.pdb
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Antlr3.Runtime.dll
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Autofac.dll
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Autofac.Integration.Mvc.dll
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Domain.dll
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EF.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EntityFramework.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EntityFramework.SqlServer.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Microsoft.AI.Agent.Intercept.dll
@@ -48,6 +52,11 @@ E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Sys
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\System.Web.WebPages.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\System.Web.WebPages.Razor.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\WebGrease.dll
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Domain.pdb
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EF.pdb
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EF.dll.config
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Autofac.xml
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Autofac.Integration.Mvc.xml
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Microsoft.AI.DependencyCollector.xml
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Microsoft.AI.ServerTelemetryChannel.xml
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Microsoft.AI.Web.xml
@@ -80,6 +89,3 @@ E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Mic
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\obj\Debug\TrashCollection.csprojResolveAssemblyReference.cache
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\obj\Debug\TrashCollection.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\obj\Debug\TrashCollection.pdb
-E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EF.dll
-E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EF.pdb
-E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EF.dll.config
