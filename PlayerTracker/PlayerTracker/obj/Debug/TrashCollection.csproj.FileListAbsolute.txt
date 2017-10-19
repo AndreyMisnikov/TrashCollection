@@ -78,7 +78,8 @@ E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Mic
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\obj\Debug\TrashCollection.csprojResolveAssemblyReference.cache
-E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\obj\Debug\PlayerTracker.Migrations.InitialMigration.resources
-E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\obj\Debug\TrashCollection.csproj.GenerateResource.Cache
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\obj\Debug\TrashCollection.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\obj\Debug\TrashCollection.pdb
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EF.dll
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EF.pdb
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\PlayerTracker\bin\EF.dll.config

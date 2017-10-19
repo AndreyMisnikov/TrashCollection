@@ -1,18 +1,18 @@
-namespace PlayerTracker.Migrations
+namespace EF.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<PlayerTracker.Models.ApplicationDbContext>
+    using EF.Models;
+
+
+    internal sealed class Configuration : DbMigrationsConfiguration<EF.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(PlayerTracker.Models.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

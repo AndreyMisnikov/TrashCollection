@@ -14,6 +14,8 @@ using PlayerTracker.Models;
 
 namespace PlayerTracker
 {
+    using EF.Models;
+
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)

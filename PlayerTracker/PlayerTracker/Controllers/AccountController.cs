@@ -12,6 +12,8 @@ using PlayerTracker.Models;
 
 namespace PlayerTracker.Controllers
 {
+    using EF.Models;
+
     [Authorize]
     public class AccountController : Controller
     {

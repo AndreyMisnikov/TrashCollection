@@ -1,2 +1,7 @@
 packages
 PlayerTracker/App_Data/
+dll
+/bin/
+/obj/
+EF/bin/
+EF/obj/
