@@ -21,21 +21,38 @@
                 </div>
             </div>
             <div class="form-group">
+                
                 @Html.LabelFor(m => m.WeekDays, new { @class = "col-md-2 control-label" })
+                
+
+                @foreach (var item in Model.AvailableWeekDays)
+                {
+                    <div class="col-md-offset-2 col-md-9 checkbox" style="padding-left: 35px">
+                        <label>
+                            @if (Model.WeekDays.Contains(item.Value))
+                            {
+                                <input type="checkbox" name="WeekDays" value="@item.Value" checked="checked" /> @item.Text
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="WeekDays" value="@item.Value" /> @item.Text
+                            }
+                        </label>
+                    </div>
+                }
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "col-md-2 control-label" })
                 <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.WeekDays, new { @class = "form-control" })
+                    @Html.TextBoxFor(model => model.StartTime, new { @class = "datetimepicker form-control" })
+                    @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.StartTime, new { @class = "col-md-2 control-label" })
+                @Html.LabelFor(model => model.EndTime, htmlAttributes: new { @class = "col-md-2 control-label" })
                 <div class="col-md-10">
-                    @Html.TextBoxFor(x => x.StartTime, "{0:hh\\:mm}", new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.EndTime, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(x => x.EndTime, "{0:hh\\:mm}", new { @class = "form-control" })
+                    @Html.TextBoxFor(model => model.EndTime, new { @class = "datetimepicker form-control" })
+                    @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
@@ -65,3 +82,11 @@
 <div>
     @Html.ActionLink("Back to main", "Index", "Home")
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'HH:mm:ss'
+        });
+    });
+</script>

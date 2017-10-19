@@ -36,7 +36,7 @@ namespace TrashCollection.Controllers
                             Id = trashCollector.Id,
                             StartTime = trashCollector.StartTime,
                             EndTime = trashCollector.EndTime,
-                            WeekDays = trashCollector.WeekDays,
+                            WeekDays = trashCollector.WeekDays?.Split(','),
                             ZipCodes = trashCollector.ZipCodes,
                             MonthlyPayment = trashCollector.MonthlyPayment,
                             UserId = trashCollector.UserId

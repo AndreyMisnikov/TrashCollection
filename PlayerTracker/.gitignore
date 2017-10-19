@@ -5,3 +5,4 @@ dll
 /obj/
 EF/bin/
 EF/obj/
+/Web.config
