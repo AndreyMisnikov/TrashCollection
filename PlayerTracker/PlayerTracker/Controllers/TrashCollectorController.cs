@@ -46,7 +46,7 @@ namespace TrashCollection.Controllers
             }
 
             ViewBag.Title = "Add information";
-            return View();
+            return View(new TrashCollectorViewModel());
         }
 
         [HttpPost]

@@ -74,11 +74,17 @@
     <Compile Include="Migrations\201710190501039_Changes for columns of trash collector.Designer.cs">
       <DependentUpon>201710190501039_Changes for columns of trash collector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710192209275_add customer table.cs" />
+    <Compile Include="Migrations\201710192209275_add customer table.Designer.cs">
+      <DependentUpon>201710192209275_add customer table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CustomerEntity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Models\TrashCollectorEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\TrashCollectorService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710190501039_Changes for columns of trash collector.resx">
       <DependentUpon>201710190501039_Changes for columns of trash collector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710192209275_add customer table.resx">
+      <DependentUpon>201710192209275_add customer table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

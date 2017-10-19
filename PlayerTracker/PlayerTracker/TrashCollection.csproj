@@ -207,6 +207,7 @@
     <Compile Include="AutofacModules\Controllers\ControllersModule.cs" />
     <Compile Include="AutofacModules\EF\EFModule.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TrashCollectorController.cs" />
@@ -215,6 +216,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TrashCollectorViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -371,6 +373,7 @@
     <Content Include="Views\Players\Create.cshtml" />
     <Content Include="Views\Players\Edit.cshtml" />
     <Content Include="Views\TrashCollector\CreateOrUpdate.cshtml" />
+    <Content Include="Views\Customer\CreateOrUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

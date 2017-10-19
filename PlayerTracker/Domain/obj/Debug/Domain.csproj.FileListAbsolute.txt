@@ -1,5 +1,4 @@
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\bin\Debug\Domain.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\bin\Debug\Domain.pdb
-E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\obj\Debug\Domain.dll
 E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\obj\Debug\Domain.pdb

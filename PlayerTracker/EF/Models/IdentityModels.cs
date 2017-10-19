@@ -48,7 +48,7 @@ namespace EF.Models
             modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
 
             modelBuilder.Entity<TrashCollectorEntity>().HasRequired(x => x.User);
-
+            modelBuilder.Entity<CustomerEntity>().HasRequired(x => x.User);
         }
 
         public static ApplicationDbContext Create()

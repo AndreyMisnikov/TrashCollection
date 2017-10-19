@@ -27,9 +27,10 @@ namespace TrashCollection.Models
         [Display(Name = "Zip codes")]
         public string ZipCodes { get; set; }
 
-        [Display(Name = "Monthly Payment")]
+        [DisplayFormat(DataFormatString = "{0:C0}", ApplyFormatInEditMode = true)]
+        [Editable(false)]
         [Required(ErrorMessage = "Required")]
-        public double MonthlyPayment { get; set; }
+        public decimal MonthlyPayment { get; set; }
 
         [Display(Name = "UserId")]
         [Editable(false)]
@@ -80,6 +81,7 @@ namespace TrashCollection.Models
                                                 Value = "Sunday"
                                             }
                                     };
+            WeekDays = new List<string>();
         }
 
 

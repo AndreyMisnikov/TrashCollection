@@ -66,7 +66,7 @@
             }
         }
 
-        public double MonthlyPayment { get; set; }
+        public decimal MonthlyPayment { get; set; }
 
         public string UserId { get; set; }
 
