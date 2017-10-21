@@ -25,6 +25,7 @@ namespace TrashCollection.Models
         public TimeSpan EndTime { get; set; }
 
         [Display(Name = "Zip codes")]
+        [Required(ErrorMessage = "Zip code Required")]
         public string ZipCodes { get; set; }
 
         [Display(Name = "Monthly Payment")]

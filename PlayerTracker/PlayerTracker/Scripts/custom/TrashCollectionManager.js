@@ -1,5 +1,8 @@
-﻿function changeCollectorStatus(status) {
-    console.log(status);
+﻿function changeCollectorStatus(customerId, collectorStatus) {
+    var requestData = {
+        customerId: customerId,
+        collectorStatus: collectorStatus
+    } 
     $.ajax('ChangeCollectorStatus', {
         type: 'POST',
         data: JSON.stringify(requestData),

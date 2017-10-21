@@ -81,9 +81,16 @@ namespace EF.Services
             return trashCollections;
         }
 
-       /* public void ChangeStatus(int collectorId, int customerId, string status)
+        public void ChangeStatus(int collectorId, int customerId, string collectorStatus, string customerStatus)
         {
-            this.repository.Insert(new TrashCollectionEntity() {} );
-        }*/
+            this.repository.Insert(new TrashCollectionEntity()
+                                       {
+                                           CustomerId = customerId,
+                                           CollectorId = collectorId,
+                                           CollectorStatusModifiedDate = DateTime.Now,
+                                           CollectorStatus = collectorStatus,
+                                           CustomerStatus = customerStatus
+            } );
+        }
     }
 }

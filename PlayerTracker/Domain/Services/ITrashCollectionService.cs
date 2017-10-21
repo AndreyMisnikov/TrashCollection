@@ -18,5 +18,6 @@ namespace Domain.Services
 
         IEnumerable<TrashCollection> GetInformation(List<int> customerIds);
 
+        void ChangeStatus(int collectorId, int customerId, string collectorStatus, string customerStatus);
     }
 }

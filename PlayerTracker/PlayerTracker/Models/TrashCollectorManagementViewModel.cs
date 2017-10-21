@@ -38,6 +38,9 @@ namespace TrashCollection.Models
         [Editable(false)]
         public int? Id { get; set; }
 
+        [Display(Name = "Id")]
+        public int CustomerId { get; set; }
+
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 

@@ -40,6 +40,7 @@ namespace TrashCollection.Controllers
                 foreach (var customer in customers)
                 {
                     var trashCollectorManagementViewModel = new TrashCollectorManagementViewModel();
+                    trashCollectorManagementViewModel.CustomerId = customer.Id;
                     trashCollectorManagementViewModel.ZipCode = customer.ZipCode;
                     trashCollectorManagementViewModel.Address = customer.Address;
                     trashCollectorManagementViewModel.City = customer.City;
@@ -50,8 +51,12 @@ namespace TrashCollection.Controllers
                     trashCollectorManagementViewModel.State = customer.State;
                     
                     var userLog = usersLogs.LastOrDefault(log => log.CustomerId == customer.Id);
-                    trashCollectorManagementViewModel.CustomerStatus = userLog == null ? TrashCollectorStatus.Default : userLog.CustomerStatus;
-                    trashCollectorManagementViewModel.CollectorStatus = userLog == null ? TrashCollectorStatus.Default : userLog.CollectorStatus;
+                    trashCollectorManagementViewModel.CustomerStatus = userLog == null ? CustomerStatusEnum.Unverified.ToString() : userLog.CustomerStatus;
+                    trashCollectorManagementViewModel.CollectorStatus = TrashCollectorStatus.Default;
+                    if (userLog != null)
+                    {
+                        trashCollectorManagementViewModel.CollectorStatus = collector.Id == userLog.CollectorId ? userLog.CollectorStatus : TrashCollectorStatus.AlreadyBooked;
+                    }
                     trashCollectorManagementViewModel.CollectorStatusModifiedDate =
                         userLog == null ? DateTime.MinValue : userLog.CollectorStatusModifiedDate;
                     trashCollectorManagementViewModel.CustomerStatusModifiedDate = userLog == null ? DateTime.MinValue : userLog.CustomerStatusModifiedDate;
@@ -65,12 +70,12 @@ namespace TrashCollection.Controllers
             return View(trashCollectorManagementViewModels);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult CollectorTT()
-        //{
-            
-        //}
+        public void ChangeCollectorStatus(int customerId, string collectorStatus)
+        {
+            string userId = User.Identity.GetUserId();
+            var collector = this.TrashCollectorService.GetInformationByUserId(userId);
+            TrashCollectionService.ChangeStatus(collector.Id, customerId, collectorStatus, CustomerStatusEnum.Unverified.ToString());
+        }
 
     }
 }
