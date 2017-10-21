@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Domain.Services
 {
-    using Domain.Entities.TrashCollector;
+    using Domain.Entities;
 
     public interface ICustomerService
     {
         void CreateOrUpdate(Customer trashCollector);
 
         Customer GetInformationByUserId(string userId);
+
+        IEnumerable<Customer> GetCustomersByCollector(TrashCollector trashCollector);
     }
 }

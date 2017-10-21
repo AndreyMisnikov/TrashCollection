@@ -8,7 +8,7 @@ namespace TrashCollection.Models
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
-    using Domain.Entities.TrashCollector;
+    using Domain.Entities;
 
     public class TrashCollectorViewModel
     {
@@ -27,6 +27,7 @@ namespace TrashCollection.Models
         [Display(Name = "Zip codes")]
         public string ZipCodes { get; set; }
 
+        [Display(Name = "Monthly Payment")]
         [DisplayFormat(DataFormatString = "{0:C0}", ApplyFormatInEditMode = true)]
         [Editable(false)]
         [Required(ErrorMessage = "Required")]

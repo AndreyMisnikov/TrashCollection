@@ -2,11 +2,10 @@
 
 namespace EF.Models
 {
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    using Domain.Entities.TrashCollector;
+    using Domain.Entities;
 
     [Table("Customer")]
     public class CustomerEntity : IEntity

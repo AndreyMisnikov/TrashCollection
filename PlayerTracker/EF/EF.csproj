@@ -78,13 +78,19 @@
     <Compile Include="Migrations\201710192209275_add customer table.Designer.cs">
       <DependentUpon>201710192209275_add customer table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710210540086_Customer-TrashCollector relation.cs" />
+    <Compile Include="Migrations\201710210540086_Customer-TrashCollector relation.Designer.cs">
+      <DependentUpon>201710210540086_Customer-TrashCollector relation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomerEntity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\TrashCollectionEntity.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Models\TrashCollectorEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\TrashCollectionService.cs" />
     <Compile Include="Services\TrashCollectorService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710192209275_add customer table.resx">
       <DependentUpon>201710192209275_add customer table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710210540086_Customer-TrashCollector relation.resx">
+      <DependentUpon>201710210540086_Customer-TrashCollector relation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

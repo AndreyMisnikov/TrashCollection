@@ -23,7 +23,6 @@ namespace TrashCollection.Controllers
         public ActionResult CreateOrUpdate()
         {
             var customer = Service.GetInformationByUserId(User.Identity.GetUserId());
-
             if (customer != null)
             {
                 ViewBag.Title = "Edit information";

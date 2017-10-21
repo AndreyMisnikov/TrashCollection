@@ -22,6 +22,7 @@ namespace TrashCollection.AutofacModules.EF
             builder.RegisterGeneric(typeof(GenericRepository<>)).As(typeof(IGenericRepository<>)).InstancePerLifetimeScope();
             builder.RegisterType<TrashCollectorService>().As(typeof(ITrashCollectorService)).InstancePerLifetimeScope();
             builder.RegisterType<CustomerService>().As(typeof(ICustomerService)).InstancePerLifetimeScope();
+            builder.RegisterType<TrashCollectionService>().As(typeof(ITrashCollectionService)).InstancePerLifetimeScope();
         }
     }
 }

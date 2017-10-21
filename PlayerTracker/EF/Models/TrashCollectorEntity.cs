@@ -5,15 +5,14 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    using Domain.Entities.TrashCollector;
-
+    using Domain.Entities;
     using EF.Models;
 
     /// <summary>
-    /// The custom script entity.
+    /// The trash collector entity.
     /// </summary>
     [Table("TrashCollector")]
-    public class TrashCollectorEntity: IEntity
+    public class TrashCollectorEntity : IEntity
     {
         /// <summary>
         /// Gets or sets the id.

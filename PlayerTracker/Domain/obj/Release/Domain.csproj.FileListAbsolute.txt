@@ -1,0 +1,5 @@
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\bin\Release\Domain.dll
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\bin\Release\Domain.pdb
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\obj\Release\Domain.csprojResolveAssemblyReference.cache
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\obj\Release\Domain.dll
+E:\Freelance\TrashCollection\TrashCollection\PlayerTracker\Domain\obj\Release\Domain.pdb

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EF.Services
 {
-    using Domain.Entities.TrashCollector;
+    using Domain.Entities;
 
     public interface ITrashCollectorService
     { 

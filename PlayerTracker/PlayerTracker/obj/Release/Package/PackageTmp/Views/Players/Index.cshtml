@@ -1,0 +1,24 @@
+﻿@model IEnumerable<PlayerTracker.Models.Player>
+@{
+    ViewBag.Title = "Players";
+}
+
+<h2>Players</h2>
+@Html.ActionLink("Add Player", "Create", "Players")
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Player</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var player in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(player.LastName, "Details", "Players", new { id = player.Id }, null)</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Players", new { id = player.Id }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

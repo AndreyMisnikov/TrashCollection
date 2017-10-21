@@ -1,0 +1,129 @@
+﻿@model TrashCollection.Models.CustomerViewModel
+@{
+
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("CreateOrUpdate", "Customer", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Customer</h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Id, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.Id, new { @readonly = "readonly", @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.City, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.State, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ZipCode, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.WeekDays, new { @class = "col-md-2 control-label" })
+
+
+                @foreach (var item in Model.AvailableWeekDays)
+                {
+                    <div class="col-md-offset-2 col-md-9 checkbox" style="padding-left: 35px">
+                        <label>
+                            @if (Model.WeekDays.Contains(item.Value))
+                            {
+                                <input type="checkbox" name="WeekDays" value="@item.Value" checked="checked" /> @item.Text
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="WeekDays" value="@item.Value" /> @item.Text
+                            }
+                        </label>
+                    </div>
+                }
+            </div>
+            
+            <div class="form-group">
+                @Html.LabelFor(model => model.NotCollectFrom, htmlAttributes: new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.NotCollectFrom, new { @class = "datetimepicker form-control" })
+                    @Html.ValidationMessageFor(model => model.NotCollectFrom, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.NotCollectTo, htmlAttributes: new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.NotCollectTo, new { @class = "datetimepicker form-control" })
+                    @Html.ValidationMessageFor(model => model.NotCollectTo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Balance, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Balance, new { @readonly = "readonly", @class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save informaion" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to main", "Index", "Home")
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'L'
+        });
+    });
+</script>

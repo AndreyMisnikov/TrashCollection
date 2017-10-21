@@ -8,7 +8,7 @@ namespace TrashCollection.Models
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
-    using Domain.Entities.TrashCollector;
+    using Domain.Entities;
 
     public class CustomerViewModel
     {

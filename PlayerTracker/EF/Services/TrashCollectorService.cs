@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace EF.Services
 {
-    using Domain.Entities.TrashCollector;
+    using Domain.Entities;
 
     public class TrashCollectorService : ITrashCollectorService
     {
         /// <summary>
-        /// The Custom script repository.
+        /// The Trash Collector repository.
         /// </summary>
         private readonly IGenericRepository<TrashCollectorEntity> repository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomScriptService"/> class.
+        /// Initializes a new instance of the <see cref="TrashCollectorService"/> class.
         /// </summary>
         /// <param name="repository">
         /// The repository.

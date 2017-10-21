@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace EF.Services
 {
-    using Domain.Entities.TrashCollector;
+    using System.Data.Entity;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq.Expressions;
+
+    using Domain.Entities;
     using Domain.Services;
 
     using EF.Models;
@@ -19,7 +23,7 @@ namespace EF.Services
         private readonly IGenericRepository<CustomerEntity> repository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomScriptService"/> class.
+        /// Initializes a new instance of the <see cref="CustomerService"/> class.
         /// </summary>
         /// <param name="repository">
         /// The repository.
@@ -83,6 +87,26 @@ namespace EF.Services
 
             return existedCustomer.ToDomainObject();
         }
+
+        public IEnumerable<Customer> GetCustomersByCollector(TrashCollector trashCollector)
+        {
+            if (trashCollector == null)
+            {
+                return new List<Customer>();
+            }
+
+            string weekDay = DateTime.Now.DayOfWeek.ToString();                           
+            var trashCollectionEntities = this.repository.FindBy(customer => trashCollector.ZipCodes.Contains(customer.ZipCode.ToString())
+                                                                             && trashCollector.WeekDays.Contains(weekDay) && customer.WeekDays.Contains(weekDay) &&
+                                                                             (customer.NotCollectFrom == null && customer.NotCollectTo == null ? true : (customer.NotCollectFrom == null
+                                                                                                                                                                        ? DbFunctions.TruncateTime(DateTime.Today) > DbFunctions.TruncateTime(customer.NotCollectTo)
+                                                                                                                                                                        : customer.NotCollectTo == null
+                                                                                                                                                                            ? DbFunctions.TruncateTime(DateTime.Today) < DbFunctions.TruncateTime(customer.NotCollectFrom)
+                                                                                                                                                                            : DbFunctions.TruncateTime(customer.NotCollectFrom) > DbFunctions.TruncateTime(DateTime.Today) || DbFunctions.TruncateTime(customer.NotCollectTo) < DbFunctions.TruncateTime(DateTime.Today))))
+                                                                             .Select(item => item.ToDomainObject());
+
+
+            return trashCollectionEntities;
+        }
     }
 }
-

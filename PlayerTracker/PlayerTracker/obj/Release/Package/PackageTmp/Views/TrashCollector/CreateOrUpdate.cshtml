@@ -1,0 +1,92 @@
+﻿@model TrashCollection.Models.TrashCollectorViewModel
+@{
+    
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("CreateOrUpdate", "TrashCollector", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Trash collector</h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Id, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.Id, new { @readonly = "readonly", @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                
+                @Html.LabelFor(m => m.WeekDays, new { @class = "col-md-2 control-label" })
+                
+
+                @foreach (var item in Model.AvailableWeekDays)
+                {
+                    <div class="col-md-offset-2 col-md-9 checkbox" style="padding-left: 35px">
+                        <label>
+                            @if (Model.WeekDays.Contains(item.Value))
+                            {
+                                <input type="checkbox" name="WeekDays" value="@item.Value" checked="checked" /> @item.Text
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="WeekDays" value="@item.Value" /> @item.Text
+                            }
+                        </label>
+                    </div>
+                }
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.StartTime, new { @class = "datetimepicker form-control" })
+                    @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.EndTime, htmlAttributes: new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.EndTime, new { @class = "datetimepicker form-control" })
+                    @Html.ValidationMessageFor(model => model.EndTime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ZipCodes, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.ZipCodes, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.MonthlyPayment, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MonthlyPayment, new { @class = "form-control"})
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save informaion" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to main", "Index", "Home")
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'HH:mm:ss'
+        });
+    });
+</script>

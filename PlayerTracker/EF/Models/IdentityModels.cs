@@ -49,6 +49,9 @@ namespace EF.Models
 
             modelBuilder.Entity<TrashCollectorEntity>().HasRequired(x => x.User);
             modelBuilder.Entity<CustomerEntity>().HasRequired(x => x.User);
+            modelBuilder.Entity<TrashCollectionEntity>().HasRequired(x => x.Collector);
+            modelBuilder.Entity<TrashCollectionEntity>().HasRequired(x => x.Customer);
+
         }
 
         public static ApplicationDbContext Create()

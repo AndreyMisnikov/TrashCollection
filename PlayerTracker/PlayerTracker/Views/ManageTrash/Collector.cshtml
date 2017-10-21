@@ -1,0 +1,167 @@
+﻿@using TrashCollection.Models
+@model IEnumerable<TrashCollection.Models.TrashCollectorManagementViewModel>
+
+@{
+    ViewBag.Title = "Manage the trash collection process";
+}
+
+<h2>Manage the trash collection process</h2>
+<h3>Seach by zip and date</h3>
+<br />
+
+<link href="~/Content/dataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+@Styles.Render("~/Content/datepicker")     
+@Scripts.Render("~/bundles/datatables")
+
+
+<table id="tableManageTrashCollection" class="display" width="100%">
+    <thead>
+    <tr>
+        <th hidden>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>ZipCode</th>
+        <th>Status by Customer</th>
+        <th>Status Modified Date by Customer</th>
+        <th>Status by Collector</th>
+        <th>Status Modified Date by Collector</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var trashManagerCollector in Model)
+    {
+        <tr>
+            <td hidden>
+                @Html.DisplayFor(modelItem => trashManagerCollector.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => trashManagerCollector.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => trashManagerCollector.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => trashManagerCollector.Email)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => trashManagerCollector.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => trashManagerCollector.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => trashManagerCollector.State)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => trashManagerCollector.ZipCode)
+            </td>
+            <td>
+                    @trashManagerCollector.CustomerStatus
+            </td>
+            <td>          
+            @if (trashManagerCollector.CustomerStatusModifiedDate == DateTime.MinValue)
+            {
+                <label>---</label>
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => trashManagerCollector.CustomerStatusModifiedDate)
+            }
+            </td>
+            <td>
+                <div class="btn-group" data-toggle="buttons">
+                    @if (trashManagerCollector.CollectorStatus == TrashCollectorStatus.Default)
+                    {
+                        <label class="btn btn-default">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.ToDo"> @TrashCollectorStatus.ToDo
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.InProgress"> @TrashCollectorStatus.InProgress
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.Done"> @TrashCollectorStatus.Done
+                        </label>
+                    }
+                    @if (trashManagerCollector.CollectorStatus == TrashCollectorStatus.ToDo)
+                    {
+                        <label class="btn btn-default active">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.ToDo"> @TrashCollectorStatus.ToDo
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.InProgress"> @TrashCollectorStatus.InProgress
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.Done"> @TrashCollectorStatus.Done
+                        </label>
+                    }
+                    @if (trashManagerCollector.CollectorStatus == TrashCollectorStatus.InProgress)
+                    {
+                        <label class="btn btn-default">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.ToDo"> @TrashCollectorStatus.ToDo
+                        </label>
+                        <label class="btn btn-default active">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.InProgress"> @TrashCollectorStatus.InProgress
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.Done"> @TrashCollectorStatus.Done
+                        </label>
+                    }
+                    @if (trashManagerCollector.CollectorStatus == TrashCollectorStatus.Done)
+                    {
+                        <label class="btn btn-default">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.ToDo"> @TrashCollectorStatus.ToDo
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.InProgress"> @TrashCollectorStatus.InProgress
+                        </label>
+                        <label class="btn btn-default active">
+                            <input type="radio" name="collectorStatus" value="@TrashCollectorStatus.Done" checked> @TrashCollectorStatus.Done
+                        </label>
+                    }
+                    @if (trashManagerCollector.CollectorStatus == TrashCollectorStatus.AlreadyBooked)
+                    {
+                        <label class="btn btn-default">The customer has been already booked by another trash collector</label>
+                    }
+                </div>
+            </td>
+            <td>
+                @if (trashManagerCollector.CollectorStatusModifiedDate ==  DateTime.MinValue)
+                {
+                    <label>---</label>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => trashManagerCollector.CollectorStatusModifiedDate)
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<script src="~/Scripts/dataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/custom/TrashCollectionManager.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("input[name='collectorStatus']").on('change', function () {
+            changeCollectorStatus(this.value);
+        });
+
+        $('#tableManageTrashCollection').DataTable({
+            language: {
+                emptyTable: "No data available in table", // 
+                loadingRecords: "Please wait .. ",
+                zeroRecords: "No matching records found"
+            },
+            "columnDefs": [
+                {"className": "dt-center", "targets": "_all"}
+            ],
+        });
+    });
+</script>
